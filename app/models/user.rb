@@ -22,7 +22,7 @@ class User < ApplicationRecord
   attr_reader :password
 
   after_initialize :ensure_session_token, :generate_discord_id, :generate_discriminator
-  # after_create :join_dm_server
+   after_create :join_dm_server
 
   has_many :administrated_servers,
     foreign_key: :admin_id,
